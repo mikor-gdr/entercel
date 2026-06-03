@@ -91,3 +91,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ftp.entercel.com
+          username: enterce1_admin@entercel.com
+          password: ${{ secrets.FTP_PASSWORD }}
